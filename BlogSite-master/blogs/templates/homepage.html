@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block title%}
+ Home
+{% endblock %}
+  {% block content %}
+  <h1>Hey this is my Blog Site...!</h1>
+  <p>You can create your blog..</p>
+  <p><a href="/blog-new/"><button class"btn btn-primary">Create</button></a></p>
+  <p>Or can see some already created blogs below:</p>
+    {% for object in  object_list %}
+      {% include "inline-list.html" with blog_post=object %}
+    {% endfor %}
+  <a href="/blog/">See more..</a>
+  {% endblock %}

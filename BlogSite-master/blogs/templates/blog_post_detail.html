@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{%block title%}
+Blog-Details
+{% endblock %}
+  {% block content %}
+    <h1><u>{{object.title}} :</u></h1>
+    <p>{{object.content | linebreaks}}</p>
+
+    {% if request.user.is_authenticated %}
+      {% if request.user.is_staff %}
+          <a href="{{ object.get_edit_url }}"><button class='btn btn-primary'>Edit</button></a>
+          <a href="{{ object.get_delete_url }}"><button class='btn btn-danger'>Delete</button></a>
+      {% endif %}
+    {% endif %}
+
+ {% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{%block title%}
+Blog-list
+{% endblock %}
+  {% block content %}
+    {% for object in  object_list %}
+      {% include "inline-list.html" with blog_post=object %}
+    {% endfor %}
+  {% endblock %}
